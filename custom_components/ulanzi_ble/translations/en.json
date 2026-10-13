@@ -1,0 +1,66 @@
+{
+  "config": {
+    "flow_title": "{name}",
+    "step": {
+      "user": {
+        "title": "Choose your Ulanzi light",
+        "description": "These Ulanzi lights are in Bluetooth range. Pick the one to add.",
+        "data": {
+          "address": "Light"
+        }
+      },
+      "bluetooth_confirm": {
+        "description": "Do you want to add {name}?"
+      },
+      "manual": {
+        "title": "Enter the light's address",
+        "description": "No Ulanzi light was found nearby. Make sure the light is switched on and close to Home Assistant, or enter its Bluetooth address by hand.",
+        "data": {
+          "address": "Bluetooth (MAC) address",
+          "name": "Bluetooth name (optional)"
+        },
+        "data_description": {
+          "address": "For example 5D:AA:9E:7B:9F:0B",
+          "name": "The name the light advertises, e.g. starting with \"Ulanzi\". Used to find the light again if its address changes."
+        }
+      }
+    },
+    "error": {
+      "invalid_address": "This is not a valid Bluetooth address. It should look like 5D:AA:9E:7B:9F:0B."
+    },
+    "abort": {
+      "already_configured": "This light is already added.",
+      "not_supported": "This device is not an Ulanzi light."
+    }
+  },
+  "entity": {
+    "light": {
+      "light": {
+        "state_attributes": {
+          "effect": {
+            "state": {
+              "off": "Off",
+              "flash": "Flash",
+              "tv": "TV",
+              "candle": "Candle",
+              "strobe1": "Strobe 1",
+              "strobe2": "Strobe 2",
+              "strobe3": "Strobe 3"
+            }
+          }
+        }
+      }
+    }
+  },
+  "exceptions": {
+    "not_found": {
+      "message": "{name} is not in Bluetooth range. Make sure it is switched on and close to Home Assistant."
+    },
+    "send_failed": {
+      "message": "Could not send the command to {name}: {error}"
+    },
+    "unknown_effect": {
+      "message": "Unknown effect: {effect}"
+    }
+  }
+}

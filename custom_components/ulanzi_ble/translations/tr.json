@@ -1,0 +1,66 @@
+{
+  "config": {
+    "flow_title": "{name}",
+    "step": {
+      "user": {
+        "title": "Ulanzi ışığını seçin",
+        "description": "Bluetooth menzilindeki Ulanzi ışıkları aşağıda. Eklemek istediğinizi seçin.",
+        "data": {
+          "address": "Işık"
+        }
+      },
+      "bluetooth_confirm": {
+        "description": "{name} eklensin mi?"
+      },
+      "manual": {
+        "title": "Işığın adresini girin",
+        "description": "Yakında Ulanzi ışığı bulunamadı. Işığın açık ve Home Assistant'a yakın olduğundan emin olun ya da Bluetooth adresini elle girin.",
+        "data": {
+          "address": "Bluetooth (MAC) adresi",
+          "name": "Bluetooth adı (isteğe bağlı)"
+        },
+        "data_description": {
+          "address": "Örneğin 5D:AA:9E:7B:9F:0B",
+          "name": "Işığın yayınladığı ad (genellikle \"Ulanzi\" ile başlar). Adres değişirse ışığı yeniden bulmak için kullanılır."
+        }
+      }
+    },
+    "error": {
+      "invalid_address": "Bu geçerli bir Bluetooth adresi değil. 5D:AA:9E:7B:9F:0B gibi görünmeli."
+    },
+    "abort": {
+      "already_configured": "Bu ışık zaten eklenmiş.",
+      "not_supported": "Bu cihaz bir Ulanzi ışığı değil."
+    }
+  },
+  "entity": {
+    "light": {
+      "light": {
+        "state_attributes": {
+          "effect": {
+            "state": {
+              "off": "Kapalı",
+              "flash": "Flaş",
+              "tv": "TV",
+              "candle": "Mum",
+              "strobe1": "Çakar 1",
+              "strobe2": "Çakar 2",
+              "strobe3": "Çakar 3"
+            }
+          }
+        }
+      }
+    }
+  },
+  "exceptions": {
+    "not_found": {
+      "message": "{name} Bluetooth menzilinde değil. Işığın açık ve Home Assistant'a yakın olduğundan emin olun."
+    },
+    "send_failed": {
+      "message": "{name} ışığına komut gönderilemedi: {error}"
+    },
+    "unknown_effect": {
+      "message": "Bilinmeyen efekt: {effect}"
+    }
+  }
+}

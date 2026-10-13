@@ -1,0 +1,23 @@
+{
+  "domain": "ulanzi_ble",
+  "name": "Ulanzi BLE Light",
+  "bluetooth": [
+    {
+      "local_name": "Ulanzi*",
+      "connectable": true
+    },
+    {
+      "service_uuid": "0000fff0-0000-1000-8000-00805f9b34fb",
+      "connectable": true
+    }
+  ],
+  "codeowners": [],
+  "config_flow": true,
+  "dependencies": ["bluetooth_adapters"],
+  "documentation": "https://github.com/KULLANICI_ADI/ulanzi_ble",
+  "integration_type": "device",
+  "iot_class": "assumed_state",
+  "issue_tracker": "https://github.com/KULLANICI_ADI/ulanzi_ble/issues",
+  "requirements": [],
+  "version": "0.1.0"
+}
